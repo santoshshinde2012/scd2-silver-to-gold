@@ -79,6 +79,27 @@ Mumbai  Ravi     [2026-06-01, open)
 
 The executable prints all outcomes. [`test_article_claims.py`](tests/test_article_claims.py) checks the reported values against a real temporary Delta table.
 
+## Example output
+
+The following successful `./run_demo.sh` run passed all **19 tests** and printed the results below. Test timing varies by machine; package installation and update notices are omitted.
+
+```text
+$ ./run_demo.sh
+...................                                                      [100%]
+19 passed in 0.53s
+deltalake 1.6.6 on local disk; not a Databricks runtime
+1. One move wrote these change rows: ['update_preimage', 'update_postimage', 'insert']. Silver for customer 42: {'spans': 2, 'overlapping_pairs': 0, 'open_spans': 1}
+2. Copy Silver and replay retained changes as rows: customer 42 {'spans': 5, 'overlapping_pairs': 6, 'open_spans': 3}
+3. Option 2, one cut point (V=2), then later changes by key: Gold matches Silver: True
+4. Correction change types: ['delete', 'insert']
+   Ignore deletes: customer 42 {'spans': 3, 'overlapping_pairs': 1, 'open_spans': 2}
+   Apply deletes:  customer 42 {'spans': 2, 'overlapping_pairs': 0, 'open_spans': 1}; matches Silver: True
+   Silver after the correction: [('Pune', '2026-01-10', '2026-05-20'), ('Mumbai', '2026-05-20', None)]
+5. Option 1, a view over Silver after the move and the correction: customer 42 {'spans': 2, 'overlapping_pairs': 0, 'open_spans': 1}; matches Silver: True
+6. Option 3, Gold changes the grain. Temporal join: [('Pune', 'Santosh', '2026-01-10', '2026-03-15'), ('Pune', 'Ravi', '2026-03-15', '2026-06-01'), ('Mumbai', 'Ravi', '2026-06-01', None)]
+   Current-adviser join: [('Pune', 'Ravi', '2026-01-10', '2026-06-01'), ('Mumbai', 'Ravi', '2026-06-01', None)]
+```
+
 ## Data and change semantics
 
 Each customer span has four fields:
