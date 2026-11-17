@@ -1,0 +1,14 @@
+{
+  "note": "Synthetic customers, cities and advisers. Nothing here is real.",
+  "silver_first_load": [
+    {"customer_id": 42, "city": "Pune", "valid_from": "2026-01-10", "valid_to": null},
+    {"customer_id": 7, "city": "Delhi", "valid_from": "2026-02-01", "valid_to": null}
+  ],
+  "move_42": {"customer_id": 42, "city": "Mumbai", "on": "2026-06-01"},
+  "move_7": {"customer_id": 7, "city": "Jaipur", "on": "2026-09-01"},
+  "correction_42": {"customer_id": 42, "city": "Mumbai", "on": "2026-05-20"},
+  "advisers_42": [
+    {"customer_id": 42, "adviser": "Santosh", "valid_from": "2026-01-01", "valid_to": "2026-03-15"},
+    {"customer_id": 42, "adviser": "Ravi", "valid_from": "2026-03-15", "valid_to": null}
+  ]
+}
