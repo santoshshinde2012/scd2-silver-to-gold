@@ -187,3 +187,7 @@ The current structure is useful; it does not require adding an inheritance hiera
 ## Data and license
 
 All example data is synthetic. No `LICENSE` file is included, and the repository does not currently declare a reuse license.
+
+## Support
+
+[![Buy Me a Coffee](https://img.shields.io/badge/buymeacoffee-black?style=for-the-badge&logo=buymeacoffee&logoColor=white)](https://buymeacoffee.com/santoshshin)
